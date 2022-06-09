@@ -20,6 +20,14 @@
         {
             $rs = $this->dbh->prepare("INSERT INTO mahasiswa (nim,nama) VALUES (?,?)");
             $rs->execute([$nim,$nama]);
+            return $rs->rowCount();
+        }
+
+        function updateData($id,$nim,$nama)
+        {
+            $rs = $this->dbh->prepare("UPDATE mahasiswa SET nim = ':nim' , nama = ':nama' WHERE id=:id");
+            $rs->execute([$id,$nim,$nama]);
+            return $rs->rowCount();
         }
 
         function lihatData()
@@ -36,4 +44,12 @@
             $rs->execute([$id]);
             return $rs->fetch();// kalau hasil query hanya satu, gunakan method fetch() bawaan PDO
         }
+
+        function deleteData($id)
+        {
+            $rs = $this->dbh->prepare("DELETE FROM mahasiswa WHERE id=?");
+            $rs->execute([$id]);
+            
+        }
+
     }

@@ -18,6 +18,9 @@
 					    <label for="exampleInputNama">Nama</label>
 					    <input type="text" class="form-control" id="exampleInputNama" name="nama" placeholder="Nama">
 					  </div>
+					  <div class="form-group">
+					    <input type="hidden" class="form-control" id="id" name="id">
+					  </div>
 
 					  <button type="submit" class="btn btn-default">Submit</button>
 					</form>

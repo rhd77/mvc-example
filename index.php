@@ -34,6 +34,18 @@
 				$controller->show_data();
 				break;
 
+			case 'edit' :
+				$controller->edit_data();
+				break;
+
+			case 'update' :
+				$controller->update_data();
+				break;
+
+			case 'hapus' :
+				$controller->delete_data();
+				break;
+
 			default : 
 				$controller->index();
 				break;
